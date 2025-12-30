@@ -38,12 +38,12 @@ export default function CryptoChartPanel() {
     refetch,
   } = useMarketChart(selectedCrypto, selectedPeriod);
 
-  const formatPrice = (value: number) => {
-    return `$${value.toLocaleString()}`;
+  const formatPrice = (value: number | undefined) => {
+    return `$${value?.toLocaleString()}`;
   };
 
-  const formatVolume = (value: number) => {
-    return `$${(value / 100000000).toFixed(2)}M`;
+  const formatVolume = (value: number | undefined) => {
+    return `$${(value ? value / 100000000 : 0).toFixed(2)}M`;
   };
 
   return (
@@ -101,7 +101,9 @@ export default function CryptoChartPanel() {
                     stroke="#666"
                   />
                   <Tooltip
-                    formatter={(value: number) => formatPrice(value)}
+                    formatter={(value: number | undefined) =>
+                      formatPrice(value)
+                    }
                     contentStyle={{
                       backgroundColor: "white",
                       border: "1px solid #ccc",
@@ -135,7 +137,9 @@ export default function CryptoChartPanel() {
                     stroke="#666"
                   />
                   <Tooltip
-                    formatter={(value: number) => formatVolume(value)}
+                    formatter={(value: number | undefined) =>
+                      formatVolume(value)
+                    }
                     contentStyle={{
                       backgroundColor: "white",
                       border: "1px solid #ccc",

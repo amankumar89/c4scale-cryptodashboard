@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Alert, IconButton } from "@mui/material";
+import { Box, Typography, Alert, IconButton } from "@mui/material";
 import { Refresh } from "@mui/icons-material";
 import { useGainersLosers } from "../../hooks/useCoinGeckoAPI";
 import CryptoCard from "./CryptoCard";
@@ -23,14 +23,10 @@ export default function GainersLosersPanel() {
         </Alert>
       )}
 
-      <Grid container spacing={3}>
-        <Grid xs={12} md={6}>
-          <CryptoCard crypto={topGainer} type="gainer" loading={loading} />
-        </Grid>
-        <Grid xs={12} md={6}>
-          <CryptoCard crypto={topLoser} type="loser" loading={loading} />
-        </Grid>
-      </Grid>
+      <div className="flex gap-8 flex-wrap">
+        <CryptoCard crypto={topGainer} type="gainer" loading={loading} />
+        <CryptoCard crypto={topLoser} type="loser" loading={loading} />
+      </div>
     </Box>
   );
 }
