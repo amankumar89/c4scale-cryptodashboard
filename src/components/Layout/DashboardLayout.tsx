@@ -7,7 +7,7 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <Box className="min-h-screen" sx={{ bgcolor: "background.default" }}>
+    <Box className="min-h-screen" sx={{ bgcolor: "#FCF8F8" }}>
       <AppBar position="static" elevation={2}>
         <Toolbar>
           <TrendingUp className="mr-2" />
