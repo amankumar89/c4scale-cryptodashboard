@@ -1,4 +1,4 @@
-export type PaletteMode = 'light' | 'dark';
+type PaletteMode = "light" | "dark";
 
 export interface CryptoMarketData {
   id: string;
@@ -49,7 +49,7 @@ export interface CryptoOption {
 
 export type TimePeriod = 7 | 14 | 30;
 
-export interface ApiError {
+interface ApiError {
   message: string;
   statusCode?: number;
 }

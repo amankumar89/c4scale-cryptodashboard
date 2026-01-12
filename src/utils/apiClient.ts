@@ -3,7 +3,7 @@ import type { CryptoMarketData, ChartData } from "../types/crypto.types";
 
 const BASE_URL = "https://api.coingecko.com/api/v3";
 
-export const coinGeckoAPI = axios.create({
+const coinGeckoAPI = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
 });
